@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="col-md-8">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <div class="post-desc">{{ post.description }}</div>
+        <span class="post-meta"><a href="/{{ post.author }}">{{ post.author }}</a> | {{ post.date | date: "%b %-d, %Y" }} | <a href="/{{ post.categories }}">{{ post.categories }}</a></span>
+        <div style="border-bottom: 2px dashed #f5f5f5; width:200px;"/>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>
+</div>
